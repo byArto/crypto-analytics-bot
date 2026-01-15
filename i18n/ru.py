@@ -110,23 +110,7 @@ TEXTS = {
 # ===== EVENTS =====
 "events_header": "📰 <b>Важные рыночные события</b>",
 "events_intro": "Ниже перечислены события, которые могут повлиять на волатильность рынка.",
-"date_unknown": "Дата уточняется",
-
-"event_cpi_title": "CPI (Инфляция США)",
-"event_cpi_desc": "Данные по инфляции часто вызывают резкие движения на рынках.",
-
-"event_fomc_title": "FOMC (Решение ФРС по ставке)",
-"event_fomc_desc": "Решения ФРС влияют на ликвидность и риск-аппетит.",
-
-"event_apt_unlock_title": "Разблокировка токенов: APT",
-"event_apt_unlock_desc": "Разблокировки увеличивают предложение и могут усилить давление.",
-
-"event_eth_update_title": "Обновление сети Ethereum",
-"event_eth_update_desc": "Крупные апдейты могут влиять на ожидания рынка.",
-
-"event_tomorrow": "Завтра",
-"event_in_2_days": "Через 2 дня",
-"event_this_week": "На этой неделе",
+"event_no_events": "📭 Нет предстоящих важных событий на ближайшие 14 дней.",
 "market_activity_header": "📊 <b>РЫНОЧНАЯ АКТИВНОСТЬ</b>",
 "market_activity_period": "⏰ <i>Последние 24 часа</i>",
 "market_activity_top_volume": "🔝 <b>Futures — топ по объёму:</b>",

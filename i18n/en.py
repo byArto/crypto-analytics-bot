@@ -110,23 +110,7 @@ TEXTS = {
 # ===== EVENTS =====
 "events_header": "📰 <b>Important market events</b>",
 "events_intro": "Below are events that may affect market volatility.",
-"date_unknown": "Date to be confirmed",
-
-"event_cpi_title": "CPI (US Inflation)",
-"event_cpi_desc": "Inflation data often triggers sharp market moves.",
-
-"event_fomc_title": "FOMC (Fed interest rate decision)",
-"event_fomc_desc": "Fed decisions affect liquidity and risk appetite.",
-
-"event_apt_unlock_title": "Token unlock: APT",
-"event_apt_unlock_desc": "Unlocks increase supply and may add selling pressure.",
-
-"event_eth_update_title": "Ethereum network upgrade",
-"event_eth_update_desc": "Major upgrades can affect market expectations.",
-
-"event_tomorrow": "Tomorrow",
-"event_in_2_days": "In 2 days",
-"event_this_week": "This week",
+"event_no_events": "📭 No upcoming important events in the next 14 days.",
 "market_activity_header": "📊 <b>MARKET ACTIVITY</b>",
 "market_activity_period": "⏰ <i>Last 24 hours</i>",
 "market_activity_top_volume": "🔝 <b>Futures — top by volume:</b>",

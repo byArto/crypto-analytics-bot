@@ -5,6 +5,7 @@ from aiogram import Bot
 
 from modules.summary import get_market_summary
 from modules.market_activity import is_market_red, is_market_green
+from modules.events import get_events_30min_before_alert
 import config
 
 logger = logging.getLogger(__name__)
@@ -95,6 +96,27 @@ async def send_daily_summary(bot: Bot, period: str):
         logger.error(f"❌ Ошибка отправки summary ({period}): {e}")
 
 
+async def check_event_alerts(bot: Bot):
+    """
+    Проверяет события за 30 минут до начала и отправляет оповещения.
+    """
+    if not config.ALERT_CHAT_ID:
+        return
+
+    try:
+        alert_text = await get_events_30min_before_alert()
+        if alert_text:
+            await bot.send_message(
+                chat_id=config.ALERT_CHAT_ID,
+                text=alert_text,
+                parse_mode="HTML"
+            )
+            logger.info("⚠️ Отправлено оповещение о событии за 30 минут")
+
+    except Exception as e:
+        logger.error(f"❌ Ошибка проверки событий за 30 минут: {e}")
+
+
 def setup_scheduler(bot: Bot) -> AsyncIOScheduler:
     scheduler = AsyncIOScheduler()
 
@@ -127,6 +149,16 @@ def setup_scheduler(bot: Bot) -> AsyncIOScheduler:
         minute=0,
         args=[bot, "evening"],
         id="daily_summary_evening",
+        replace_existing=True
+    )
+
+    # ⚠️ Проверка событий за 30 минут — каждые 5 минут
+    scheduler.add_job(
+        check_event_alerts,
+        "interval",
+        minutes=5,
+        args=[bot],
+        id="event_alerts_30min",
         replace_existing=True
     )
 

@@ -1,15 +1,33 @@
-# Environment
-.env
-.venv/
-venv/
-
 # Python
 __pycache__/
-*.pyc
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# Virtual Environment
+venv/
+.venv/
+ENV/
+env/
+
+# Environment variables
+.env
 
 # IDE
 .vscode/
 .idea/
+*.swp
+*.swo
+*~
 
 # OS
 .DS_Store
+Thumbs.db
+
+# Bot data
+data/
+*.log
+
+# Test files (не загружаем на сервер)
+test_*.py
