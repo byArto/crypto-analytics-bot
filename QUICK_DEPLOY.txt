@@ -1,0 +1,53 @@
+🚀 БЫСТРАЯ ИНСТРУКЦИЯ ПО РАЗВЕРТЫВАНИЮ
+==========================================
+
+✅ На GitHub уже загружено: https://github.com/byArto/crypto-analytics-bot
+
+📋 КОМАНДЫ ДЛЯ СЕРВЕРА (копируйте по порядку):
+==========================================
+
+1. Подключиться к серверу:
+   ssh your_user@your_server_ip
+
+2. Остановить бота:
+   sudo systemctl stop crypto-bot
+   # ИЛИ: pkill -f "python.*main.py"
+
+3. Перейти в папку бота:
+   cd /path/to/crypto-analytics-bot
+   # Найти папку: find /home -name "crypto-analytics-bot" 2>/dev/null
+
+4. Создать бэкап (на всякий случай):
+   cp modules/events.py modules/events.py.backup
+
+5. Обновить код:
+   git pull origin main
+
+6. Создать папку для данных:
+   mkdir -p data && chmod 755 data
+
+7. Запустить бота:
+   sudo systemctl start crypto-bot
+   # ИЛИ: source .venv/bin/activate && nohup python main.py > bot.log 2>&1 &
+
+8. Проверить что работает:
+   sudo systemctl status crypto-bot
+   # ИЛИ: ps aux | grep "python.*main.py"
+
+9. Посмотреть логи:
+   sudo journalctl -u crypto-bot -f
+   # ИЛИ: tail -f bot.log
+
+10. Протестировать в Telegram:
+    Отправить боту: /events
+
+==========================================
+✅ ГОТОВО!
+
+Должны увидеть актуальные события:
+- 🔴 US CPI Data Release
+- 🟠 Token Unlock: APT
+- 🔴 US Federal Reserve FOMC Meeting
+
+📖 Полная инструкция: DEPLOY.md
+📊 Документация: EVENTS_UPDATE.md
