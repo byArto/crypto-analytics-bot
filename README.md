@@ -30,3 +30,5 @@ cd crypto-analytics-bot
 python -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+cp .env.example .env
+# fill in TELEGRAM_BOT_TOKEN and COINGLASS_API_KEY before first run
